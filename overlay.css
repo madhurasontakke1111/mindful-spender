@@ -1,0 +1,291 @@
+/* Mindful Spender Overlay Styles */
+
+#mindful-spender-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+  animation: mindful-fadein 0.5s ease;
+}
+
+@keyframes mindful-fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+#mindful-spender-card {
+  background: linear-gradient(145deg, #1a3a2a, #0f2d1e);
+  border: 1px solid rgba(74, 222, 128, 0.25);
+  border-radius: 24px;
+  padding: 48px 52px;
+  max-width: 480px;
+  width: 90%;
+  text-align: center;
+  color: #f0fdf4;
+  box-shadow:
+    0 0 60px rgba(34, 197, 94, 0.15),
+    0 32px 64px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  animation: mindful-slideup 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes mindful-slideup {
+  from { transform: translateY(30px) scale(0.96); opacity: 0; }
+  to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+#mindful-spender-leaf {
+  font-size: 40px;
+  margin-bottom: 16px;
+  animation: mindful-breathe 4s ease-in-out infinite;
+}
+
+@keyframes mindful-breathe {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.1); }
+}
+
+#mindful-spender-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4ade80;
+  margin-bottom: 6px;
+  letter-spacing: -0.3px;
+}
+
+#mindful-spender-subtitle {
+  font-size: 14px;
+  color: #86efac;
+  margin-bottom: 32px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* Work hours display */
+#mindful-spender-workhours {
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  display: none;
+}
+
+#mindful-spender-workhours.visible {
+  display: block;
+  animation: mindful-fadein 0.4s ease;
+}
+
+#mindful-spender-workhours-label {
+  font-size: 12px;
+  color: #86efac;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+  opacity: 0.7;
+}
+
+#mindful-spender-workhours-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4ade80;
+}
+
+#mindful-spender-workhours-detail {
+  font-size: 12px;
+  color: #86efac;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+/* Timer ring */
+#mindful-spender-timer-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 28px;
+}
+
+#mindful-spender-timer-svg {
+  width: 140px;
+  height: 140px;
+  transform: rotate(-90deg);
+}
+
+#mindful-spender-timer-bg {
+  fill: none;
+  stroke: rgba(74, 222, 128, 0.1);
+  stroke-width: 6;
+}
+
+#mindful-spender-timer-arc {
+  fill: none;
+  stroke: #4ade80;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-dasharray: 408;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear, stroke 0.5s ease;
+  filter: drop-shadow(0 0 6px rgba(74, 222, 128, 0.6));
+}
+
+#mindful-spender-timer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 42px;
+  font-weight: 800;
+  color: #4ade80;
+  line-height: 1;
+  letter-spacing: -2px;
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+}
+
+#mindful-spender-timer-seconds-label {
+  font-size: 11px;
+  color: #86efac;
+  opacity: 0.6;
+  margin-top: 2px;
+  display: block;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Reflection prompts */
+#mindful-spender-reflection {
+  font-size: 14px;
+  color: #bbf7d0;
+  margin-bottom: 28px;
+  line-height: 1.6;
+  min-height: 44px;
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+  font-style: italic;
+}
+
+/* Proceed button */
+#mindful-spender-proceed {
+  display: none;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+  animation: mindful-fadein 0.5s ease;
+}
+
+#mindful-spender-proceed:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(34, 197, 94, 0.5);
+}
+
+#mindful-spender-proceed:active {
+  transform: translateY(0);
+}
+
+#mindful-spender-proceed.visible {
+  display: block;
+}
+
+#mindful-spender-waiting {
+  font-size: 13px;
+  color: #86efac;
+  opacity: 0.6;
+  margin-top: 0;
+}
+
+#mindful-spender-waiting.hidden {
+  display: none;
+}
+
+/* Set wage link */
+#mindful-spender-setwage {
+  display: block;
+  margin-top: 18px;
+  font-size: 12px;
+  color: #4ade80;
+  opacity: 0.5;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  transition: opacity 0.2s;
+}
+
+#mindful-spender-setwage:hover {
+  opacity: 0.85;
+}
+
+/* Inline wage input */
+#mindful-spender-wage-form {
+  display: none;
+  margin-top: 16px;
+  animation: mindful-fadein 0.3s ease;
+}
+
+#mindful-spender-wage-form.visible {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+#mindful-spender-wage-input {
+  background: rgba(74, 222, 128, 0.08);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  border-radius: 8px;
+  color: #f0fdf4;
+  font-size: 15px;
+  padding: 8px 12px;
+  width: 120px;
+  outline: none;
+  font-family: inherit;
+  text-align: center;
+}
+
+#mindful-spender-wage-input::placeholder {
+  color: #4ade80;
+  opacity: 0.4;
+}
+
+#mindful-spender-wage-input:focus {
+  border-color: rgba(74, 222, 128, 0.6);
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.12);
+}
+
+#mindful-spender-wage-save {
+  background: #22c55e;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+#mindful-spender-wage-save:hover {
+  background: #16a34a;
+}
